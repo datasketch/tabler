@@ -7,7 +7,7 @@ ui <- shinyUI(fluidPage(
 
 server <- function(input, output, session) {
   output$tabler <- renderTabler(
-    tabler(sheetId = '1MK7XKswxHrI1S7EWJexlb2ZEB6-s-w8sqErvnayhRGE')
+    tabler(sheetId = '1MK7XKswxHrI1S7EWJexlb2ZEB6-s-w8sqErvnayhRGE', paginate = F)
   )
 }
 

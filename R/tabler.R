@@ -4,11 +4,13 @@
 #' @import htmlwidgets
 #'
 #' @export
-tabler <- function(sheetId = NULL, width = NULL, height = NULL, elementId = NULL) {
+tabler <- function(sheetId = NULL, rowsByPage = 10, paginate = T, width = NULL, height = NULL, elementId = NULL) {
 
   # forward options using x
   x = list(
-    sheetId = sheetId
+    sheetId = sheetId,
+    rowsByPage = rowsByPage,
+    paginate = paginate
   )
 
   # create widget
