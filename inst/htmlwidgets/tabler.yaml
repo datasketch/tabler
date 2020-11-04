@@ -1,0 +1,10 @@
+dependencies:
+ - name: gsheetreader
+   version: 1.0.0
+   src: htmlwidgets/lib/gsheetreader
+   script: gsheetreader.min.js
+ - name: tabulator
+   version: 4.8.0
+   src: htmlwidgets/lib/tabulator
+   script: tabulator.min.js
+   stylesheet: tabulator_simple.min.css
