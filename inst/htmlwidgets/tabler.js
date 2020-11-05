@@ -6,32 +6,50 @@ HTMLWidgets.widget({
   factory: function (el, width, height) {
     return {
       renderValue: function (x) {
-        const { sheetId, rowsByPage, paginate } = x;
+        const {
+          sheetId,
+          rowsByPage,
+          paginate,
+          localization: { locale, langs },
+        } = x;
+
         if (!sheetId) {
           return;
         }
-        const paginateOptions = paginate
-          ? { pagination: 'local', paginationSize: rowsByPage }
-          : {};
+
+        const paginateOptions = paginate && {
+          pagination: 'local',
+          paginationSize: rowsByPage,
+        };
+
+        const localizationOptions = locale && {
+          locale,
+          langs,
+        };
 
         const reader = new GSheetReader(sheetId);
 
-        reader
-          .getJSON()
-          .then(function (response) {
-            const columns = response.headers.map(function (header) {
-              return { title: header, field: header };
-            });
-            const tabulator = new Tabulator(el, {
-              columns,
-              data: response.data,
-              layout: 'fitColumns',
-              ...paginateOptions,
-            });
-          })
-          .catch(function (err) {
-            console.log(err);
-          });
+        reader.getJSON().then(renderTable).catch(handleErr);
+
+        function renderTable(response) {
+          const { headers, data } = response;
+          const columns = headers.map((header) => ({
+            title: header,
+            field: header,
+            minWidth: 100,
+          }));
+          const options = Object.assign(
+            { columns, data, layout: 'fitColumns' },
+            paginateOptions,
+            localizationOptions
+          );
+          const table = new Tabulator(el, options);
+        }
+
+        function handleErr(err) {
+          el.textContent = err.message;
+          console.log(err);
+        }
       },
 
       resize: function (width, height) {

@@ -4,13 +4,23 @@
 #' @import htmlwidgets
 #'
 #' @export
-tabler <- function(sheetId = NULL, rowsByPage = 10, paginate = T, width = NULL, height = NULL, elementId = NULL) {
+tabler <- function(sheetId = NULL,
+                   rowsByPage = 10,
+                   paginate = T,
+                   localization = list(
+                     locale = NULL,
+                     langs = NULL
+                   ),
+                   width = NULL,
+                   height = NULL,
+                   elementId = NULL) {
 
   # forward options using x
   x = list(
     sheetId = sheetId,
     rowsByPage = rowsByPage,
-    paginate = paginate
+    paginate = paginate,
+    localization = localization
   )
 
   # create widget
@@ -41,7 +51,7 @@ tabler <- function(sheetId = NULL, rowsByPage = 10, paginate = T, width = NULL, 
 #' @name tabler-shiny
 #'
 #' @export
-tablerOutput <- function(outputId, width = '100%', height = '400px'){
+tablerOutput <- function(outputId, width = NULL, height = NULL){
   htmlwidgets::shinyWidgetOutput(outputId, 'tabler', width, height, package = 'tabler')
 }
 
