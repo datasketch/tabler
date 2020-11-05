@@ -31,7 +31,7 @@ The `tabler` function accept the following parameters
 
 | param        | default                           | description                                         |
 |--------------|-----------------------------------|-----------------------------------------------------|
-| sheetId      | null                              | Public Google Sheets id                             |
+| sheetId      | NULL                              | Public Google Sheets id                             |
 | rowsByPage   | 10                                | Rows shown by page when `paginate` is set to `TRUE` |
 | paginate     | T                                 | Toggles pagination on or off                        |
 | localization | list(locale = NULL, langs = NULL) | See an [example](./inst/example/localization.R)     |
@@ -43,4 +43,5 @@ The `tabler` function accept the following parameters
 
 ## Roadmap
 
+- [ ] Document `tabler` function
 - [ ] Render table from dataframe
