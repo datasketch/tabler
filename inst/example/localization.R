@@ -2,6 +2,8 @@ library(shiny)
 library(jsonlite)
 library(tabler)
 
+# More info on docs: http://tabulator.info/docs/4.8/localize#define
+
 langs <- '{
   "es": {
     "pagination": {
