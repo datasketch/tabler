@@ -6,7 +6,7 @@
 \alias{renderTabler}
 \title{Shiny bindings for tabler}
 \usage{
-tablerOutput(outputId, width = "100\%", height = "400px")
+tablerOutput(outputId, width = NULL, height = NULL)
 
 renderTabler(expr, env = parent.frame(), quoted = FALSE)
 }

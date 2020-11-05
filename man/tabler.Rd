@@ -4,7 +4,17 @@
 \alias{tabler}
 \title{Create a table based a JSON retrieved from a Google Sheet}
 \usage{
-tabler(sheetId = NULL, width = NULL, height = NULL, elementId = NULL)
+tabler(
+  sheetId = NULL,
+  rowsByPage = 10,
+  paginate = TRUE,
+  localization = list(locale = NULL, langs = NULL),
+  searchable = FALSE,
+  searchableFields = c(),
+  width = NULL,
+  height = NULL,
+  elementId = NULL
+)
 }
 \description{
 Create a table based a JSON retrieved from a Google Sheet

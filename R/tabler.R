@@ -6,10 +6,15 @@
 #' @export
 tabler <- function(sheetId = NULL,
                    rowsByPage = 10,
-                   paginate = T,
+                   paginate = TRUE,
                    localization = list(
                      locale = NULL,
                      langs = NULL
+                   ),
+                   search = list(
+                     enable = FALSE,
+                     fields = c(),
+                     placeholder = NULL
                    ),
                    width = NULL,
                    height = NULL,
@@ -20,7 +25,8 @@ tabler <- function(sheetId = NULL,
     sheetId = sheetId,
     rowsByPage = rowsByPage,
     paginate = paginate,
-    localization = localization
+    localization = localization,
+    search = search
   )
 
   # create widget

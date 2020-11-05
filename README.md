@@ -29,12 +29,23 @@ shinyApp(ui = ui, server = server)
 
 The `tabler` function accept the following parameters
 
-| param        | default                           | description                                         |
-|--------------|-----------------------------------|-----------------------------------------------------|
-| sheetId      | NULL                              | Public Google Sheets id                             |
-| rowsByPage   | 10                                | Rows shown by page when `paginate` is set to `TRUE` |
-| paginate     | T                                 | Toggles pagination on or off                        |
-| localization | list(locale = NULL, langs = NULL) | See an [example](./inst/example/localization.R)     |
+| param               | default  | description                                         |
+|---------------------|----------|-----------------------------------------------------|
+| sheetId             | NULL     | Public Google Sheets id                             |
+| rowsByPage          | 10       | Rows shown by page when `paginate` is set to `TRUE` |
+| paginate            | TRUE     | Toggles pagination on or off                        |
+| localization.langs  | NULL     | Translations dictionary                             |
+| localization.locale | NULL     | Set a key from the `localizations.langs` object     |
+| search.enable       | FALSE    | Render search input                                 |
+| search.fields       | c()      |                                                     |
+| search.placeholder  | NULL     | Search input placeholder                            |
+
+## Examples
+
+- [Basic](./inst/example/sample.R)
+- [Pagination](./inst/example/pagination.R)
+- [Localization](./inst/example/localization.R)
+- [Search](./inst/example/searchable.R)
 
 ## Dependencies
 
