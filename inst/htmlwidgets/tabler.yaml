@@ -1,6 +1,6 @@
 dependencies:
  - name: gsheetreader
-   version: 1.0.0
+   version: 2.0.0
    src: htmlwidgets/lib/gsheetreader
    script: gsheetreader.min.js
  - name: tabulator
