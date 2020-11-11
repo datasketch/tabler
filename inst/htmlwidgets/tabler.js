@@ -68,9 +68,9 @@ HTMLWidgets.widget({
           langs,
         };
 
-        const reader = new GSheetReader(sheetId);
+        const reader = new GSheetReader();
 
-        reader.getJSON().then(renderTable).catch(handleErr);
+        reader.getJSON(sheetId).then(renderTable).catch(handleErr);
 
         function renderTable(response) {
           const { headers, data } = response;
