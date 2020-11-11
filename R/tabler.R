@@ -13,9 +13,10 @@ tabler <- function(sheetId = NULL,
                    ),
                    search = list(
                      enable = FALSE,
-                     fields = c(),
+                     fields = list(),
                      placeholder = NULL
                    ),
+                   filters = list(),
                    width = NULL,
                    height = NULL,
                    elementId = NULL) {
@@ -26,7 +27,8 @@ tabler <- function(sheetId = NULL,
     rowsByPage = rowsByPage,
     paginate = paginate,
     localization = localization,
-    search = search
+    search = search,
+    filters = filters
   )
 
   # create widget

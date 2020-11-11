@@ -10,7 +10,7 @@ server <- function(input, output, session) {
     tabler(sheetId = '1MK7XKswxHrI1S7EWJexlb2ZEB6-s-w8sqErvnayhRGE',
            paginate = FALSE,
            search = list(enable = TRUE,
-                         fields = c("country", "capital"),
+                         fields = list("country", "capital"),
                          placeholder = "Search by country or capital city"))
   )
 }
